@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionamento da Nuvemshop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #121212; /* Fundo escuro */
+            color: #ffffff; /* Texto branco */
+        }
+
+        .container {
+            display: inline-block;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background-color: #1e1e1e; /* Fundo do container mais claro que o fundo geral */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: #ffffff; /* Título branco */
+        }
+
+        #authCode {
+            font-weight: bold;
+            color: #00BFFF; /* Destaque em azul */
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Seção da Logo em cima -->
+        <div class="logo">
+            <img src="logo.png" alt="Logo"> <!-- Coloque a logo na mesma pasta que o HTML -->
+        </div>
+
+        <h1>Autorização Concluída!</h1>
+        <p>Seu código de autorização é: <span id="authCode"></span></p>
+    </div>
+
+    <script>
+        // Captura o código de autorização da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const authCode = urlParams.get('code');
+
+        // Exibe o código de autorização na página
+        document.getElementById('authCode').textContent = authCode;
+    </script>
+</body>
+
+</html>
